@@ -88,33 +88,46 @@ If BACK is t, jump backward."
         (forward-char))
     (evil-find-char-to-backward count char)))
 
+(evil-define-motion evil-avy-goto-char-in-line-to (count char)
+  :jump t
+  :type exclusive
+  (interactive "<c><C>")
+  (if (null count)
+      (let* ((saved_point (point)))
+        (progn
+          (avy-goto-char-in-line char)
+          (if (<= (point) saved_point)
+              (forward-char)
+            (backward-char))))
+    (evil-find-char-to count char)))
+
 ;; Replace motions
 
 (evil-define-key 'normal evil-avy-mode-map
-  "f" 'evil-avy-find-char
+  "f" 'evil-avy-goto-char-in-line
   "F" 'evil-avy-find-char-backward
-  "t" 'evil-avy-find-char-to
+  "t" 'evil-avy-goto-char-in-line-to
   "T" 'evil-avy-find-char-to-backward
   )
 
 (evil-define-key 'operator evil-avy-mode-map
-  "f" 'evil-avy-find-char
+  "f" 'evil-avy-goto-char-in-line
   "F" 'evil-avy-find-char-backward
-  "t" 'evil-avy-find-char-to
+  "t" 'evil-avy-goto-char-in-line-to
   "T" 'evil-avy-find-char-to-backward
   )
 
 (evil-define-key 'visual evil-avy-mode-map
-  "f" 'evil-avy-find-char
+  "f" 'evil-avy-goto-char-in-line
   "F" 'evil-avy-find-char-backward
-  "t" 'evil-avy-find-char-to
+  "t" 'evil-avy-goto-char-in-line-to
   "T" 'evil-avy-find-char-to-backward
   )
 
 (evil-define-key 'motion evil-avy-mode-map
-  "f" 'evil-avy-find-char
+  "f" 'evil-avy-goto-char-in-line
   "F" 'evil-avy-find-char-backward
-  "t" 'evil-avy-find-char-to
+  "t" 'evil-avy-goto-char-in-line-to
   "T" 'evil-avy-find-char-to-backward
   )
 
