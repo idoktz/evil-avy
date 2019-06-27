@@ -87,7 +87,7 @@ If BACK is t, jump backward."
 
 (evil-define-motion evil-avy-goto-char-in-line-to (count char)
   :jump t
-  :type exclusive
+  :type inclusive
   (interactive "<c><C>")
   (if (null count)
       (let* ((saved_point (point)))
