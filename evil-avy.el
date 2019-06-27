@@ -3,7 +3,7 @@
 ;; Copyright (C) 2015  Free Software Foundation, Inc.
 
 ;; Keywords: point, location, evil, vim
-;; Version: 1.1.0
+;; Version: 1.2.0
 
 ;; This file is part of GNU Emacs.
 
