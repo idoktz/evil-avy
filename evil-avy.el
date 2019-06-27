@@ -128,7 +128,8 @@ If BACK is t, jump backward."
 ;;   "T" 'evil-avy-find-char-to-backward
 ;;   )
 
-(evil-define-key (list 'normal 'operator 'visual 'motion )
+(evil-define-key '( normal operator visual motion ) evil-avy-mode-map
+;; (evil-define-key (list 'normal 'operator 'visual 'motion ) evil-avy-mode-map
   "f" 'evil-avy-goto-char-in-line
   "F" 'evil-avy-find-char-backward
   "t" 'evil-avy-goto-char-in-line-to
