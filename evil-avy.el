@@ -100,28 +100,35 @@ If BACK is t, jump backward."
 
 ;; Replace motions
 
-(evil-define-key 'normal evil-avy-mode-map
-  "f" 'evil-avy-goto-char-in-line
-  "F" 'evil-avy-find-char-backward
-  "t" 'evil-avy-goto-char-in-line-to
-  "T" 'evil-avy-find-char-to-backward
-  )
+;; (evil-define-key 'normal evil-avy-mode-map
+;;   "f" 'evil-avy-goto-char-in-line
+;;   "F" 'evil-avy-find-char-backward
+;;   "t" 'evil-avy-goto-char-in-line-to
+;;   "T" 'evil-avy-find-char-to-backward
+;;   )
 
-(evil-define-key 'operator evil-avy-mode-map
-  "f" 'evil-avy-goto-char-in-line
-  "F" 'evil-avy-find-char-backward
-  "t" 'evil-avy-goto-char-in-line-to
-  "T" 'evil-avy-find-char-to-backward
-  )
+;; (evil-define-key 'operator evil-avy-mode-map
+;;   "f" 'evil-avy-goto-char-in-line
+;;   "F" 'evil-avy-find-char-backward
+;;   "t" 'evil-avy-goto-char-in-line-to
+;;   "T" 'evil-avy-find-char-to-backward
+;;   )
 
-(evil-define-key 'visual evil-avy-mode-map
-  "f" 'evil-avy-goto-char-in-line
-  "F" 'evil-avy-find-char-backward
-  "t" 'evil-avy-goto-char-in-line-to
-  "T" 'evil-avy-find-char-to-backward
-  )
+;; (evil-define-key 'visual evil-avy-mode-map
+;;   "f" 'evil-avy-goto-char-in-line
+;;   "F" 'evil-avy-find-char-backward
+;;   "t" 'evil-avy-goto-char-in-line-to
+;;   "T" 'evil-avy-find-char-to-backward
+;;   )
 
-(evil-define-key 'motion evil-avy-mode-map
+;; (evil-define-key 'motion evil-avy-mode-map
+;;   "f" 'evil-avy-goto-char-in-line
+;;   "F" 'evil-avy-find-char-backward
+;;   "t" 'evil-avy-goto-char-in-line-to
+;;   "T" 'evil-avy-find-char-to-backward
+;;   )
+
+(evil-define-key '( normal operator visual motion )
   "f" 'evil-avy-goto-char-in-line
   "F" 'evil-avy-find-char-backward
   "t" 'evil-avy-goto-char-in-line-to
